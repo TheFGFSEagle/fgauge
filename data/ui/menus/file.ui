@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+	<class>Menu</class>
+	<widget class="QMenu" name="menuFile">
+		<property name="title">
+			<string>File</string>
+		</property>
+		<addaction name="actionOpen"/>
+		<action name="actionOpen">
+			<property name="text">
+				<string>Open</string>
+			</property>
+		</action>
+	</widget>
+	<resources/>
+	<connections/>
+</ui>
