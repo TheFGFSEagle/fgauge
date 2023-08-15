@@ -2,10 +2,18 @@
 #define SVGAUGE_MAINWINDOW_HXX
 
 #include <QMainWindow>
+#include <osgViewer/Viewer>
+#include <osgQOpenGL/osgQOpenGLWidget>
 
-class SVGaugeMainWindow: public QMainWindow {
+class FGaugeMainWindow: public QMainWindow {
 	public:
-		SVGaugeMainWindow();
+		FGaugeMainWindow();
+		void initUI();
+		int load();
+	
+	private:
+		QWidget* mainWidget;
+		osgQOpenGLWidget* widget;
 };
 
 #endif

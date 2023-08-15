@@ -7,12 +7,16 @@
 #include "application.hxx"
 #include "mainwindow.hxx"
 
-SVGaugeApplication::SVGaugeApplication(int& argc, char* argv[]): QApplication(argc, argv) {
+FGaugeApplication::FGaugeApplication(int& argc, char **argv):
+	QApplication(argc, argv)
+{
+	this->osgArguments = new osg::ArgumentParser(&argc, argv);
 	QDir::setSearchPaths("res", QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation));
 }
 
-void SVGaugeApplication::initUI() {
-	mainWindow = new SVGaugeMainWindow(); 
+void FGaugeApplication::initUI() {
+	mainWindow = new FGaugeMainWindow(); 
+	mainWindow->initUI();
 	mainWindow->show();
 }
 

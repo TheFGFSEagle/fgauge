@@ -3,13 +3,21 @@
 
 #include <QApplication>
 
+#include <osg/ArgumentParser>
+
 #include "mainwindow.hxx"
 
-class SVGaugeApplication: public QApplication {
+class FGaugeApplication: public QApplication {
 	public:
-		SVGaugeApplication(int& argc, char* argv[]);
+		FGaugeApplication(int& argc, char **argv, osg::ArgumentParser*);
+		FGaugeApplication(int& argc, char **argv);
 		void initUI();
-		SVGaugeMainWindow* mainWindow;
+		static FGaugeApplication* instance() {
+			return static_cast<FGaugeApplication*>(QApplication::instance());
+		}
+		
+		FGaugeMainWindow* mainWindow;
+		osg::ArgumentParser* osgArguments;
 };
 #endif
 

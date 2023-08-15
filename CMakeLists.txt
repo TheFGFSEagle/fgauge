@@ -11,8 +11,23 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 	set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
+set(OpenGL_GL_PREFERENCE "GLVND")
+set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/CMakeModules;${CMAKE_MODULE_PATH}")
+set_property(GLOBAL PROPERTY FIND_LIBRARY_USE_LIB64_PATHS TRUE)
+
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt5 COMPONENTS UiTools REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(OpenSceneGraph 3.6.0 REQUIRED
+	osgSim
+	osgDB
+	osgParticle
+	osgFX
+	osgUtil
+	osgViewer
+	osgGA
+)
+find_package(osgQOpenGL REQUIRED)
 add_subdirectory(3rdparty)
 add_subdirectory(data)
 add_subdirectory(src)
