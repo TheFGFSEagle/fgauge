@@ -45,6 +45,9 @@ jobs:
             c_compiler: cl
 
     steps:
+    - name: Configure Git
+      run: >
+        git config --global --add url."git@github.com:".insteadOf "https://github.com/"
     - uses: actions/checkout@v3
       with:
         repository: openscenegraph/osgQt
