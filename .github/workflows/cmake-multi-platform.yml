@@ -48,7 +48,7 @@ jobs:
     - uses: actions/checkout@v3
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with:
-        packages: qtbase5-dev qttools5-dev
+        packages: qtbase5-dev qttools5-dev libopenscenegraph-dev
         version: 1.0
 
     - name: Set reusable strings
