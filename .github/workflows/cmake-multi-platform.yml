@@ -49,7 +49,7 @@ jobs:
       with:
         repository: openscenegraph/osgQt
         ref: refs/heads/master
-        token: ${{ secrets.pat }}
+        token: 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
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with:
         packages: qtbase5-dev qttools5-dev libopenscenegraph-dev
