@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menubar>
+	<menu>
+		<label>File</label>
+		<menuitem>
+			<label>Quit</label>
+			<icon>application-exit</icon>
+			<command>quit</command>
+			<shortcut>Ctrl+q</shortcut>
+		</menuitem>
+	</menu>
+</menubar>
+

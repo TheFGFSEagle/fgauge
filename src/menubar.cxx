@@ -19,12 +19,17 @@ void addMenuItem(T* parent, pugi::xml_node itemNode) {
 		std::cout << "Warning: no such theme icon '" << iconName << "' in theme " << QIcon::themeName().toStdString() << " !" << std::endl;
 	}
 	item->setShortcut(QKeySequence(itemNode.child_value("shortcut")));
-	QObject::connect(
-		item,
-		&QAction::triggered,
-		getCommand(itemNode.child_value("command")),
-		&FGaugeCommand::execute
-	);
+	FGaugeCommand* cmd = getCommand(itemNode.child_value("command"));
+	if (cmd) {
+		QObject::connect(
+			item,
+			&QAction::triggered,
+			getCommand(itemNode.child_value("command")),
+			&FGaugeCommand::execute
+		);
+	} else {
+		std::cout << "No command with name '" << itemNode.child_value("command") << "' !" << std::endl;
+	}
 }
 
 template<typename T>

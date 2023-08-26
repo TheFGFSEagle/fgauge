@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+	<class>mainwindow</class>
+	<widget class="FGaugeMainWindow" name="MainWindow">
+		<property name="title">
+			<string>FGauge</string>
+		</property>
+		<widget class="FGaugeMenuBar" name="MenuBar">
+			<!--<widget class="QMenu" name="MenuFile">
+				<property name="title">
+					<string>File</string>
+				</property>
+				<addaction name="ActionFileOpen"/>
+			</widget>
+			<action name="ActionFileOpen">
+				<property name="text">
+					<string>Open …</string>
+				</property>
+			</action>
+			<addaction name="MenuFile"/>-->
+		</widget>
+		<widget class="QWidget" name="MainWidget">
+		</widget>
+		<widget class="QStatusBar" name="StatusBar">
+		</widget>
+	</widget>
+	<resources/>
+	<connections>
+		<connection>
+			<sender>ActionFileOpen</sender>
+			<signal>triggered()</signal>
+			<receiver>MainWindow</receiver>
+			<slot>loadProject()</slot>
+		</connection>
+	</connections>
+	<customwidgets>
+		<customwidget>
+			<class>FGaugeMenuBar</class>
+			<extends>QMenuBar</extends>
+			<header>src/menubar.hxx</header>
+		</customwidget>
+		<customwidget>
+			<class>FGaugeMainWindow</class>
+			<extends>QMainWindow</extends>
+			<header>src/mainwindow.hxx</header>
+		</customwidget>
+	</customwidgets>
+</ui>
+
