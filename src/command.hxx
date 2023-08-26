@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "singleton.hxx"
+
 class FGaugeCommand: public QObject {
 	Q_OBJECT
 	public:
@@ -13,7 +15,7 @@ class FGaugeCommand: public QObject {
 };
 
 #define FGAUGECOMMAND_GEN_DEF(classname) \
-class classname: public FGaugeCommand { \
+class classname: public Singleton<classname, FGaugeCommand> { \
 	public: \
 		classname(); \
 		void execute() override; \

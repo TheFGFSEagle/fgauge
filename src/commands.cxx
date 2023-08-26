@@ -8,7 +8,7 @@
 FGAUGECOMMAND_GEN_IMPL(FGaugeCommandQuit, quit, FGaugeApplication::instance()->exit())
 
 static std::map<std::string, FGaugeCommand*> _commandMap = {
-	{"quit", new FGaugeCommandQuit}
+	{"quit", FGaugeCommandQuit::instance()}
 };
 
 FGaugeCommand* getCommand(std::string name) {
