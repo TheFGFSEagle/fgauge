@@ -10,13 +10,13 @@
 FGaugeApplication::FGaugeApplication(int& argc, char **argv):
 	QApplication(argc, argv)
 {
-	this->osgArguments = new osg::ArgumentParser(&argc, argv);
+	osgArguments = new osg::ArgumentParser(&argc, argv);
 	QDir::setSearchPaths("res", QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation));
 }
 
 void FGaugeApplication::initUI() {
-	mainWindow = new FGaugeMainWindow(); 
-	mainWindow->initUI();
-	mainWindow->show();
+	FGaugeMainWindow* w = FGaugeMainWindow::instance();
+	w->initUI();
+	w->show();
 }
 

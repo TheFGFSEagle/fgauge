@@ -1,9 +1,14 @@
 add_executable(fgauge
 	#mainwindow.ui
 	application.cxx
+	command.cxx
+	commands.cxx
 	mainwindow.cxx
 	main.cxx
-	menus.cxx
+	menubar.cxx
+	project.cxx
+	uiloader.cxx
+	utils.cxx
 	#resources.qrc
 )
 
