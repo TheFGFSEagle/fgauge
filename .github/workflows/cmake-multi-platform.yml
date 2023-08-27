@@ -47,7 +47,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        fetch-depth: 2
+        submodules: recursive
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with:
         packages: qtbase5-dev qttools5-dev libopenscenegraph-dev
