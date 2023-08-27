@@ -45,14 +45,7 @@ jobs:
             c_compiler: cl
 
     steps:
-    - name: Configure Git
-      run: >
-        git config --global --add url."git@github.com:".insteadOf "https://github.com/"
     - uses: actions/checkout@v3
-      with:
-        repository: openscenegraph/osgQt
-        ref: refs/heads/master
-        token: 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
     - uses: awalsh128/cache-apt-pkgs-action@latest
       with:
         packages: qtbase5-dev qttools5-dev libopenscenegraph-dev
@@ -64,18 +57,6 @@ jobs:
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
-
-    - name: Configure osgQt
-      run: >
-        cmake -B ${{github.workspace}}/osgQt/build
-        -DCMAKE_CXX_COMPILER=${{ matrix.cpp_compiler }}
-        -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
-        -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
-        -S ${{github.workspace}}/osgQt
-    - name: Build osgQt
-      run: >
-        cmake --build ${{github.workspace}}/osgQt/build --config ${{ matrix.build_type }}
-        cmake --install ${{github.workspace}}/osgQt/build --prefix /usr
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
