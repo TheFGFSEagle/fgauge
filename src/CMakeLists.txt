@@ -25,10 +25,26 @@ if(CMAKE_BUILD_TYPE EQUAL "Debug")
 		${OSGPARTICLE_LIBRARY_DEBUG}
 		${OSGUTIL_LIBRARY_DEBUG}
 		${OSGFX_LIBRARY_DEBUG}
-		${OSGQT_LIBRARIES}
+		${PROJECT_BINARY_DIR}/3rdparty/osgQt/lib/libosgQOpenGLd.so
 	)
 else()
-	target_link_libraries(fgauge Qt5::Widgets Qt5::UiTools pugixml::pugixml ${OPENSCENEGRAPH_LIBRARIES} ${OSGQT_LIBRARIES})
+	target_link_libraries(
+		fgauge
+		Qt5::Widgets
+		Qt5::UiTools
+		pugixml::pugixml
+		${OPENSCENEGRAPH_LIBRARIES}
+		${PROJECT_BINARY_DIR}/3rdparty/osgQt/lib/libosgQOpenGL.so
+	)
 endif()
-target_include_directories(fgauge PUBLIC ../3rdparty/popl/include/ ../3rdparty/pugixml/src ${OPENSCENEGRAPH_INCLUDE_DIR} ${OSGQT_INCLUDE_DIR})
+
+target_include_directories(
+	fgauge
+	PUBLIC
+		${PROJECT_SOURCE_DIR}/3rdparty/popl/include/
+		${PROJECT_SOURCE_DIR}/3rdparty/pugixml/src/
+		${PROJECT_SOURCE_DIR}/3rdparty/osgQt/include/
+		${OPENSCENEGRAPH_INCLUDE_DIR}
+)
+
 install(TARGETS fgauge RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})

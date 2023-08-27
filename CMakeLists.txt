@@ -26,7 +26,6 @@ find_package(OpenSceneGraph 3.6.0 REQUIRED
 	osgUtil
 	osgViewer
 	osgGA
-	osgQt
 )
 add_subdirectory(3rdparty)
 add_subdirectory(data)
