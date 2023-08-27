@@ -20,3 +20,7 @@ void FGaugeApplication::initUI() {
 	w->show();
 }
 
+void FGaugeApplication::loadProject() {
+	std::cout << "loadProject" << std::endl;
+}
+

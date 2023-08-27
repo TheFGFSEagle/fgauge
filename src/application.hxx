@@ -16,6 +16,9 @@ class FGaugeApplication: public QApplication {
 		}
 		
 		osg::ArgumentParser* osgArguments;
+	
+	public slots:
+		void loadProject();
 };
 #endif
 

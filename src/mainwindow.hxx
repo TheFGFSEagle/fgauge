@@ -18,9 +18,6 @@ class FGaugeMainWindow: public Singleton<FGaugeMainWindow, QMainWindow> {
 	private:
 		QWidget* mainWidget;
 		osgQOpenGLWidget* widget;
-	
-	public slots:
-		void loadProject();
 };
 
 #endif

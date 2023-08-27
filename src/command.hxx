@@ -28,7 +28,7 @@ void classname::execute() { \
 	exec_code; \
 } \
 const std::string classname::name() { \
-	return #stringname; \
+	return stringname; \
 } \
 
 #endif

@@ -89,7 +89,3 @@ int FGaugeMainWindow::load() {
 	return 0;
 }
 
-void FGaugeMainWindow::loadProject() {
-	std::cout << "loadProject" << std::endl;
-}
-

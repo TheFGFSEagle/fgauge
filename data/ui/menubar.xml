@@ -3,6 +3,13 @@
 	<menu>
 		<label>File</label>
 		<menuitem>
+			<label>Open …</label>
+			<icon>document-open</icon>
+			<command>load-project</command>
+			<shortcut>Ctrl+o</shortcut>
+		</menuitem>
+			
+		<menuitem>
 			<label>Quit</label>
 			<icon>application-exit</icon>
 			<command>quit</command>

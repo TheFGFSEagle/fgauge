@@ -6,6 +6,7 @@
 FGaugeCommand* getCommand(std::string name);
 
 FGAUGECOMMAND_GEN_DEF(FGaugeCommandQuit)
+FGAUGECOMMAND_GEN_DEF(FGaugeCommandLoadProject)
 
 #endif
 
