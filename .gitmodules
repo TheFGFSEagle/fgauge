@@ -5,3 +5,6 @@
 	path = 3rdparty/pugixml
 	url = https://github.com/zeux/pugixml
 
+[submodule "3rdparty/osgQt"]
+	path = 3rdparty/osgQt
+	url = https://github.com/openscenegraph/osgQt
