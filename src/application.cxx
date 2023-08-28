@@ -1,4 +1,5 @@
 #include <QDir>
+#include <QFileDialog>
 #include <QStandardPaths>
 #include <QDebug>
 
@@ -17,10 +18,11 @@ FGaugeApplication::FGaugeApplication(int& argc, char **argv):
 void FGaugeApplication::initUI() {
 	FGaugeMainWindow* w = FGaugeMainWindow::instance();
 	w->initUI();
-	w->show();
+	w->showMaximized();
 }
 
 void FGaugeApplication::loadProject() {
-	std::cout << "loadProject" << std::endl;
+	std::string filename = QFileDialog::getOpenFileName(nullptr, "Open project", QDir::currentPath(), "FGauge projects (*.fgauge)").toStdString();
+	std::cout << "loadProject " << filename<< std::endl;
 }
 

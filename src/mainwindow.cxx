@@ -38,15 +38,14 @@ FGaugeMainWindow::FGaugeMainWindow() {
 }
 
 void FGaugeMainWindow::initUI() {
-	auto arguments = FGaugeApplication::instance()->osgArguments;
-	
+	setWindowTitle("FGauge");
 	loadWidgetFromFile<FGaugeMainWindow>("res:ui/mainwindow.ui");
 	FGaugeMenuBar::instance()->initUI();
 	setMenuBar(FGaugeMenuBar::instance());
 	mainWidget = new QWidget();
 	QVBoxLayout mainLayout;
 	mainWidget->setLayout(&mainLayout);
-	widget = new osgQOpenGLWidget(arguments);
+	widget = new osgQOpenGLWidget(FGaugeApplication::instance()->osgArguments);
 	QObject::connect(widget, &osgQOpenGLWidget::initialized, this, &FGaugeMainWindow::load);
 	mainLayout.addWidget(widget);
 	setCentralWidget(mainWidget);
@@ -74,16 +73,16 @@ int FGaugeMainWindow::load() {
 	widget->getOsgViewer()->addEventHandler(new osgViewer::LODScaleHandler);
 	widget->getOsgViewer()->addEventHandler(new osgViewer::ScreenCaptureHandler);
 	
-	osg::ref_ptr<osg::Node> model = osgDB::readRefNodeFile("/media/frederic/WD-5TB/.fg/fgfs-addons/Aircraft/c310-family/Models/c310a.ac");
+	/*osg::ref_ptr<osg::Node> model = osgDB::readRefNodeFile("/media/frederic/WD-5TB/.fg/fgfs-addons/Aircraft/c310-family/Models/c310a.ac");
 	if (!model) {
 		std::cout << "fail" << std::endl;
 		return 1;
-	}
+	}*/
 	
 	osgUtil::Optimizer optimizer;
 	optimizer.optimize(model);
 	
-	widget->getOsgViewer()->setSceneData(model);
+	//widget->getOsgViewer()->setSceneData(model);
 	widget->show();
 	
 	return 0;

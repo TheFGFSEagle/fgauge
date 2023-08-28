@@ -2,9 +2,6 @@
 <ui version="4.0">
 	<class>mainwindow</class>
 	<widget class="FGaugeMainWindow" name="MainWindow">
-		<property name="title">
-			<string>FGauge</string>
-		</property>
 		<widget class="FGaugeMenuBar" name="MenuBar">
 			<!--<widget class="QMenu" name="MenuFile">
 				<property name="title">
