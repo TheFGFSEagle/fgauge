@@ -3,7 +3,7 @@
 #include <QStandardPaths>
 #include <QDebug>
 
-#include <popl.hpp>
+#include <argparse/argparse.hpp>
 
 #include "application.hxx"
 #include "logging.hxx"
