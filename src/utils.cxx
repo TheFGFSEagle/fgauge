@@ -5,3 +5,8 @@ std::string getResourcePath(std::string path) {
 	return resolver.fileName().toStdString();
 }
 
+template<typename T>
+std::string string(T& other) {
+	return {other};
+}
+

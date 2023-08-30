@@ -77,12 +77,12 @@ int FGaugeMainWindow::load() {
 	if (!model) {
 		std::cout << "fail" << std::endl;
 		return 1;
-	}*/
+	}
 	
 	osgUtil::Optimizer optimizer;
 	optimizer.optimize(model);
 	
-	//widget->getOsgViewer()->setSceneData(model);
+	widget->getOsgViewer()->setSceneData(model);*/
 	widget->show();
 	
 	return 0;

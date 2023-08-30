@@ -6,11 +6,13 @@
 #include <popl.hpp>
 
 #include "application.hxx"
+#include "logging.hxx"
 #include "mainwindow.hxx"
 
 FGaugeApplication::FGaugeApplication(int& argc, char **argv):
 	QApplication(argc, argv)
 {
+	LOG(INFO, "info message");
 	osgArguments = new osg::ArgumentParser(&argc, argv);
 	QDir::setSearchPaths("res", QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation));
 }

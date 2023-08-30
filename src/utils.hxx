@@ -5,5 +5,9 @@
 #include <string>
 
 std::string getResourcePath(std::string path);
+
+template<typename T>
+std::string& string(T& string);
+
 #endif
 
