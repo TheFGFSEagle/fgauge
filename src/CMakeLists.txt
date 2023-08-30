@@ -3,6 +3,7 @@ add_executable(fgauge
 	application.cxx
 	command.cxx
 	commands.cxx
+	logging.cxx
 	mainwindow.cxx
 	main.cxx
 	menubar.cxx
@@ -32,6 +33,7 @@ else()
 		fgauge
 		Qt5::Widgets
 		Qt5::UiTools
+		argparse::argparse
 		pugixml::pugixml
 		${OPENSCENEGRAPH_LIBRARIES}
 		${PROJECT_BINARY_DIR}/3rdparty/osgQt/lib/libosgQOpenGL.so
@@ -41,10 +43,11 @@ endif()
 target_include_directories(
 	fgauge
 	PUBLIC
-		${PROJECT_SOURCE_DIR}/3rdparty/popl/include/
+		argparse::argparse
 		${PROJECT_SOURCE_DIR}/3rdparty/pugixml/src/
 		${PROJECT_SOURCE_DIR}/3rdparty/osgQt/include/
 		${OPENSCENEGRAPH_INCLUDE_DIR}
 )
 
 install(TARGETS fgauge RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+
